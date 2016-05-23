@@ -1,0 +1,15 @@
+<html>
+<head>
+<script src="aes.js"></script>
+<script type="text/javascript">
+	function update(){
+		document.getElementById('new').value = CryptoJS.AES.encrypt(document.getElementById('old').value, 'thispassphrasesofun');
+	}
+</script>
+</head>
+<body>
+<p>Old schedule (list of numbers): <input type = "text" id = "old"></p>
+<p>New schedule code: <input type = "text" id = "new"></p>
+<p><button onclick = "update();">Migrate</button></p>
+</body>
+</html>
