@@ -67,5 +67,22 @@ function generateTable (){
 	}
 	html += '</table>';
 	console.log(html);
+}
 
+/**
+ * Run this function while navigating HoBLotH registration page (https://www.hearthofbritannia.com/events/HoBLotH3/registration.php)
+ * then copy the list of ids into the migration page at ./migrate.html to generate a schedule code
+ */
+
+function myIds(){
+	var elements = document.querySelectorAll(".questTitle");
+	var ids = '';
+	for (var i = 3; i < elements.length; i++){
+		var href = elements[i].parentNode.href;
+		if (href){
+			var id = href.substr(href.indexOf("=")+1);
+			ids += id + ',';
+		}
+	}
+	console.log(ids);
 }
